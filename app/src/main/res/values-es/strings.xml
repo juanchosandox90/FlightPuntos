@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Vuelos Puntos</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Configuración</string>
+    <string name="title_activity_login">sign in</string>
+
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_phone">Telefono</string>
+    <string name="prompt_credit_card">Tarjeta de Crédito</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="prompt_confirm_password">Confirma tu Contraseña</string>
+    <string name="action_login">Ingresa</string>
+    <string name="action_register">Registrate</string>
+
+
+    <string name="prompt_flyingfrom">Volando desde</string>
+    <string name="prompt_flyingto">Volando hacia</string>
+    <string name="prompt_departure_date">Fecha de salida</string>
+    <string name="prompt_return_date">Fecha de regreso</string>
+    <string name="prompt_traveller">Select Traveller</string>
+    <string name="prompt_class">Selecciona la clase</string>
+    <string name="prompt_first_name">Primer Nombre</string>
+    <string name="prompt_last_name">Apellido</string>
+    <string name="alert_dialog_two_buttons_title">My Title</string>
+
+    <string name="succesful_register">Tu perfil fue creado!</string>
+    <string name="database_unavailable">Error en la base datos</string>
+    <string name="account_exist">Una cuenta con este correo ya existe. Por favor intenta con otro email.</string>
+    <string name="ok_button">OK</string>
+    <string name="enter_first_name">Por favor ingresa tu nombre</string>
+    <string name="enter_valid_first_name">Por favor ingresa un nombre valido</string>
+    <string name="enter_last_name">por favor ingresa tu apellido</string>
+    <string name="enter_valid_last_name">Por favor ingresa un apellido valido</string>
+    <string name="enter_email">Por favor ingresa tu correo</string>
+    <string name="enter_valid_email">Por favor ingresa un correo valido</string>
+    <string name="enter_phone">Por favor ingresa tu número de telefono</string>
+    <string name="enter_valid_phone">Por favor ingresa un número de telefono valido</string>
+    <string name="enter_credit_card">Por favor ingresa tu número de tarjeta de crédito</string>
+    <string name="enter_valid_credit_card">Por favor ingresa un número de tarjeta de crédito valido</string>
+    <string name="enter_password">Por favor ingresa tu contraseña</string>
+    <string name="enter_valid_pasword">Tu contraseña debe tener minimo 6 caracteres</string>
+    <string name="confirm_password">Por favor confirma tu contraseña</string>
+    <string name="password_not_match">Las contraseñas no coinciden</string>
+    <string name="error_closing_db">Error cerrando la base de datos.</string>
+    <string name="invalid_email_password">Correo o contraseña invalidas. Intenta de nuevo.</string>
+    <string name="account_register_label">¿Aún no tienes cuenta? Registrate</string>
+    <string name="login_label">Ingresa</string>
+    <string name="already_account_label">¿Ya tienes una cuenta? Ingresa</string>
+    <string name="register_label">Registrate</string>
+
+    <string-array name="sort">
+        <item>Fare</item>
+        <item>Travel time</item>
+    </string-array>
+
+
+</resources>

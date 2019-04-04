@@ -26,6 +26,7 @@
             android:name=".controllers.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".controllers.MainActivity" />
     </application>
 
 </manifest>

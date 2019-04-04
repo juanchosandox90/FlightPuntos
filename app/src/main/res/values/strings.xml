@@ -27,13 +27,36 @@
     <string name="prompt_last_name">Last Name</string>
     <string name="alert_dialog_two_buttons_title">My Title</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="succesful_register">Your profile was created succesfully!</string>
+
+
+    <string name="database_unavailable">Database unavailable</string>
+    <string name="account_exist">An account with this email already exists. Please try again.</string>
+    <string name="ok_button">OK</string>
+    <string name="enter_first_name">Please enter your first name</string>
+    <string name="enter_valid_first_name">Please enter a valid first name</string>
+    <string name="enter_last_name">Please enter your last name</string>
+    <string name="enter_valid_last_name">Please enter a valid last name</string>
+    <string name="enter_email">Please enter your email</string>
+    <string name="enter_valid_email">Please enter a valid email</string>
+    <string name="enter_phone">Please enter your phone</string>
+    <string name="enter_valid_phone">Please enter a valid phone</string>
+    <string name="enter_credit_card">Please enter your credit card number</string>
+    <string name="enter_valid_credit_card">Please enter a valid credit card number</string>
+    <string name="enter_password">Please enter your password</string>
+    <string name="enter_valid_pasword">Your password must have at least 6 characters.</string>
+    <string name="confirm_password">Please confirm password</string>
+    <string name="password_not_match">The password doesn\'t match.</string>
+    <string name="error_closing_db">Error closing database or cursor</string>
+    <string name="invalid_email_password">Invalid email or password</string>
+    <string name="account_register_label">Don\'t have an account? Register</string>
+    <string name="login_label">Login</string>
+    <string name="already_account_label">Already have an account? Login</string>
+    <string name="register_label">Register</string>
 
     <string-array name="sort">
         <item>Fare</item>
         <item>Travel time</item>
     </string-array>
-
 
 </resources>

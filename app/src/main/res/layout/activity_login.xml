@@ -79,7 +79,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:gravity="center"
-                    android:text="Don't have an account? Register" />
+                    android:text="@string/account_register_label"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </ScrollView>
@@ -91,7 +92,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/colorAccent"
             android:fontFamily="sans-serif"
-            android:text="Login"
+            android:text="@string/login_label"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18sp" />

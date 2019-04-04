@@ -16,17 +16,19 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ScrollView
             android:id="@+id/register_form"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/btnRegister">
+
             <LinearLayout
                 android:id="@+id/employee_registration_form"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="15dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -43,6 +45,7 @@
 
 
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -57,6 +60,7 @@
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -71,6 +75,7 @@
                         android:singleLine="true" />
 
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -137,12 +142,12 @@
                     android:id="@+id/linkLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Already have an account? Login"
+                    android:layout_marginTop="30dp"
                     android:gravity="center"
-                    android:layout_marginTop="30dp"/>
+                    android:text="@string/already_account_label"
+                    android:textStyle="bold" />
 
             </LinearLayout>
-
 
 
         </ScrollView>
@@ -153,16 +158,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/colorAccent"
-            android:textColor="@android:color/white"
-            android:text="Register"
-            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:text="@string/register_label"
             android:textAllCaps="false"
-            android:fontFamily="sans-serif"/>
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
 
     </RelativeLayout>
-
-
 
 
 </LinearLayout>
