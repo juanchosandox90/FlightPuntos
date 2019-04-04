@@ -45,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL(createClient());
             db.execSQL(createAccount());
 
-            insertClient(db, "Juan", "Sandoval", "3124532091", "5412547854125963");
+            insertClient(db, "Juan", "Sandoval", "3124532091");
 
             insertAccount(db, "juansandoval222@gmail.com", "123456", 1);
         }
@@ -66,7 +66,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "FIRSTNAME TEXT COLLATE NOCASE, " +
                 "LASTNAME TEXT COLLATE NOCASE, " +
                 "PHONE TEXT, " +
-                "CREDITCARD TEXT, " +
                 "IMAGE BLOB);";
     }
 
@@ -79,20 +78,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert("ACCOUNT", null, accountValues);
     }
 
-    public static void insertClient(SQLiteDatabase db, String firstName, String lastName, String phone, String creditCard) {
+    public static void insertClient(SQLiteDatabase db, String firstName, String lastName, String phone) {
         ContentValues clientValues = new ContentValues();
         clientValues.put("FIRSTNAME", HelperUtilities.capitalize(firstName.toLowerCase()));
         clientValues.put("LASTNAME", HelperUtilities.capitalize(lastName.toLowerCase()));
         clientValues.put("PHONE", phone);
-        clientValues.put("CREDITCARD", creditCard);
         db.insert("CLIENT", null, clientValues);
     }
 
     public static Cursor selectClientID(SQLiteDatabase db, String firstName, String lastName,
-                                        String phone, String creditCard) {
+                                        String phone) {
         return db.query("CLIENT", new String[]{"_id"},
-                "FIRSTNAME = ? AND LASTNAME = ? AND PHONE = ? AND CREDITCARD = ? ",
-                new String[]{firstName, lastName, phone, creditCard},
+                "FIRSTNAME = ? AND LASTNAME = ? AND PHONE = ? ",
+                new String[]{firstName, lastName, phone},
                 null, null, null, null);
     }
 

@@ -26,7 +26,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText inputFirstName;
     private EditText inputLastName;
     private EditText inputEmail;
-    private EditText inputCreditCard;
     private EditText inputPhone;
     private EditText inputConfirmPassword;
     private EditText inputPassword;
@@ -49,7 +48,6 @@ public class RegisterActivity extends AppCompatActivity {
         inputLastName = (EditText) findViewById(R.id.txtLastName);
         inputEmail = (EditText) findViewById(R.id.txtEmail);
         inputPhone = (EditText) findViewById(R.id.txtPhone);
-        inputCreditCard = (EditText) findViewById(R.id.txtCreditCard);
         inputPassword = (EditText) findViewById(R.id.txtPassword);
         inputConfirmPassword = (EditText) findViewById(R.id.txtConfirmPassword);
 
@@ -97,14 +95,12 @@ public class RegisterActivity extends AppCompatActivity {
                     DatabaseHelper.insertClient(db,
                             inputFirstName.getText().toString(),
                             inputLastName.getText().toString(),
-                            inputPhone.getText().toString(),
-                            inputCreditCard.getText().toString());
+                            inputPhone.getText().toString());
 
                     cursor = DatabaseHelper.selectClientID(db,
                             inputFirstName.getText().toString(),
                             inputLastName.getText().toString(),
-                            inputPhone.getText().toString(),
-                            inputCreditCard.getText().toString());
+                            inputPhone.getText().toString());
 
                     if (cursor != null && cursor.getCount() == 1) {
                         cursor.moveToFirst();
@@ -186,14 +182,6 @@ public class RegisterActivity extends AppCompatActivity {
             return false;
         } else if (!HelperUtilities.isValidPhone(inputPhone.getText().toString())) {
             inputPhone.setError(getString(R.string.enter_valid_phone));
-            return false;
-        }
-
-        if (HelperUtilities.isEmptyOrNull(inputCreditCard.getText().toString())) {
-            inputCreditCard.setError(getString(R.string.enter_credit_card));
-            return false;
-        } else if (!HelperUtilities.isValidCreditCard(inputCreditCard.getText().toString())) {
-            inputCreditCard.setError(getString(R.string.enter_valid_credit_card));
             return false;
         }
         if (HelperUtilities.isEmptyOrNull(inputPassword.getText().toString())) {
