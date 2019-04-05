@@ -100,7 +100,7 @@ public class ReturnFlightListActivity extends AppCompatActivity {
             if (cursor != null && cursor.getCount() > 0) {
                 cursor.moveToFirst();
 
-                actionBar.setTitle("Select return flight");
+                actionBar.setTitle(R.string.select_return_flight);
                 actionBar.setSubtitle(HelperUtilities.capitalize(destination) + " -> " + HelperUtilities.capitalize(origin));
 
                 CursorAdapter listAdapter = new SimpleCursorAdapter(getApplicationContext(),
@@ -139,7 +139,7 @@ public class ReturnFlightListActivity extends AppCompatActivity {
 
 
         } catch (SQLiteException e) {
-            Toast.makeText(getApplicationContext(), "Database error", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
 
     }
@@ -147,9 +147,9 @@ public class ReturnFlightListActivity extends AppCompatActivity {
     public Dialog flightNotFoundDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("The specified return flight is not available. Please try again later.")
+        builder.setMessage(R.string.return_flight_not_available)
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -164,7 +164,7 @@ public class ReturnFlightListActivity extends AppCompatActivity {
     public Dialog sortDialog() {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Sort by")
+        builder.setTitle(R.string.sort_by_label)
                 .setItems(R.array.sort, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int id) {

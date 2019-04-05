@@ -85,7 +85,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
             }
         } catch (SQLiteException ex) {
-            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
 
     }
@@ -115,7 +115,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 updateProfileDialog().show();
             }
         } catch (SQLiteException ex) {
-            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
 
     }
@@ -129,9 +129,9 @@ public class EditProfileActivity extends AppCompatActivity {
     public Dialog updateProfileDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("The profile updated successfully! ")
+        builder.setMessage(R.string.profile_updated_successfull)
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
                         Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
@@ -144,34 +144,34 @@ public class EditProfileActivity extends AppCompatActivity {
 
     public boolean isValidUserInput() {
         if (HelperUtilities.isEmptyOrNull(clientFirstName.getText().toString())) {
-            clientFirstName.setError("Please enter your first name");
+            clientFirstName.setError(getString(R.string.enter_first_name));
             return false;
         } else if (!HelperUtilities.isString(clientFirstName.getText().toString())) {
-            clientFirstName.setError("Please enter a valid first name");
+            clientFirstName.setError(getString(R.string.enter_valid_first_name));
             return false;
         }
 
         if (HelperUtilities.isEmptyOrNull(clientLastName.getText().toString())) {
-            clientLastName.setError("Please enter your last name");
+            clientLastName.setError(getString(R.string.enter_last_name));
             return false;
         } else if (!HelperUtilities.isString(clientLastName.getText().toString())) {
-            clientLastName.setError("Please enter a valid last name");
+            clientLastName.setError(getString(R.string.enter_valid_last_name));
             return false;
         }
 
         if (HelperUtilities.isEmptyOrNull(clientEmail.getText().toString())) {
-            clientEmail.setError("Please enter your email");
+            clientEmail.setError(getString(R.string.enter_email));
             return false;
         } else if (!HelperUtilities.isValidEmail(clientEmail.getText().toString())) {
-            clientEmail.setError("Please enter a valid email");
+            clientEmail.setError(getString(R.string.enter_valid_email));
             return false;
         }
 
         if (HelperUtilities.isEmptyOrNull(clientPhone.getText().toString())) {
-            clientPhone.setError("Please enter your phone");
+            clientPhone.setError(getString(R.string.enter_phone));
             return false;
         } else if (!HelperUtilities.isValidPhone(clientPhone.getText().toString())) {
-            clientPhone.setError("Please enter a valid phone");
+            clientPhone.setError(getString(R.string.enter_valid_phone));
             return false;
         }
 
@@ -186,7 +186,7 @@ public class EditProfileActivity extends AppCompatActivity {
             cursor.close();
             db.close();
         } catch (Exception ex) {
-            Toast.makeText(getApplicationContext(), "Error closing database or cursor", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
 
     }

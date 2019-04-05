@@ -84,7 +84,7 @@ public class ItineraryActivity extends AppCompatActivity {
 
 
         }catch (SQLiteException e){
-            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
 
     }

@@ -30,7 +30,7 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".controllers.AboutActivity"
-            android:label="About"
+            android:label="@string/about_title"
             android:parentActivityName=".controllers.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -40,7 +40,7 @@
         </activity>
         <activity
             android:name=".controllers.SecurityActivity"
-            android:label="Security Settings"
+            android:label="@string/security_settings_title"
             android:parentActivityName=".controllers.MainActivity"
             android:windowSoftInputMode="stateHidden">
 
@@ -51,7 +51,7 @@
         </activity>
         <activity
             android:name=".controllers.ProfileActivity"
-            android:label="Profile"
+            android:label="@string/profile_title"
             android:parentActivityName=".controllers.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -61,7 +61,7 @@
         </activity>
         <activity
             android:name=".controllers.ItineraryActivity"
-            android:label="Itinerary"
+            android:label="@string/itinerary_title"
             android:parentActivityName=".controllers.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -79,7 +79,7 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".controllers.CheckOutActivity"
-            android:label="Checkout"
+            android:label="@string/checkout_title"
             android:parentActivityName=".controllers.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -89,7 +89,7 @@
         </activity>
         <activity
             android:name=".controllers.OneWayFlightListActivity"
-            android:label="Flight list"
+            android:label="@string/flight_list_title"
             android:parentActivityName=".controllers.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -99,7 +99,7 @@
         </activity>
         <activity
             android:name=".controllers.ReturnFlightListActivity"
-            android:label="Rlight list"
+            android:label="@string/flight_list_title"
             android:parentActivityName=".controllers.OutboundFlightListActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -109,7 +109,7 @@
         </activity>
         <activity
             android:name=".controllers.OutboundFlightListActivity"
-            android:label="Flight list"
+            android:label="@string/flight_list_title"
             android:parentActivityName=".controllers.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -119,7 +119,7 @@
         </activity>
         <activity
             android:name=".controllers.FlightDetailActivity"
-            android:label="Flight Detail"
+            android:label="@string/flight_detail_title"
             android:parentActivityName=".controllers.ItineraryActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -129,7 +129,7 @@
         </activity>
         <activity
             android:name=".controllers.EditProfileActivity"
-            android:label="Edit Profile"
+            android:label="@string/edit_profile_title"
             android:parentActivityName=".controllers.ProfileActivity"
             android:windowSoftInputMode="stateHidden">
 

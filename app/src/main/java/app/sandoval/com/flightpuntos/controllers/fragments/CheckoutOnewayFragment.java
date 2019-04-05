@@ -138,7 +138,7 @@ public class CheckoutOnewayFragment extends Fragment {
             }
 
         } catch (SQLiteException ex) {
-            Toast.makeText(getActivity().getApplicationContext(), "Database error occurred", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
     }
 
@@ -168,16 +168,16 @@ public class CheckoutOnewayFragment extends Fragment {
 
 
         } catch (SQLiteException e) {
-
+            e.printStackTrace();
         }
     }
 
     public Dialog bookFlightDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Your flight booked successfully. ")
+        builder.setMessage(R.string.book_successfully_label)
                 .setCancelable(false)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button_label, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         intent = new Intent(getActivity(), MainActivity.class);
                         startActivity(intent);
@@ -190,9 +190,9 @@ public class CheckoutOnewayFragment extends Fragment {
     public Dialog flightAlreadyBookedAlert() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("You already booked this flight. ")
+        builder.setMessage(R.string.already_booked_flight)
                 .setCancelable(false)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button_label, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         intent = new Intent(getActivity(), MainActivity.class);
                         startActivity(intent);

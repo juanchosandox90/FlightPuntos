@@ -77,7 +77,7 @@ public class SecurityActivity extends AppCompatActivity {
                 changePasswordDialog().show();
             }
         } catch (SQLiteException ex) {
-            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
 
     }
@@ -85,9 +85,9 @@ public class SecurityActivity extends AppCompatActivity {
     public Dialog changePasswordDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("The password changed successfully! ")
+        builder.setMessage(R.string.password_change_successfully)
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -102,22 +102,22 @@ public class SecurityActivity extends AppCompatActivity {
     public boolean isValidInput() {
         isValidUser = isValidUser();
         if (HelperUtilities.isEmptyOrNull(oldPassword.getText().toString())) {
-            oldPassword.setError("Please enter your password");
+            oldPassword.setError(getString(R.string.enter_password));
             return false;
         } else if (!isValidUser) {
-            oldPassword.setError("Incorrect password");
+            oldPassword.setError(getString(R.string.incorrect_password));
             return false;
         } else if (HelperUtilities.isEmptyOrNull(newPassword.getText().toString())) {
-            newPassword.setError("Please enter your new password");
+            newPassword.setError(getString(R.string.enter_new_password));
             return false;
         } else if (HelperUtilities.isEmptyOrNull(confirmPassword.getText().toString())) {
-            confirmPassword.setError("Please confirm your new password");
+            confirmPassword.setError(getString(R.string.confirm_new_password));
             return false;
         } else if (HelperUtilities.isShortPassword(newPassword.getText().toString())) {
-            newPassword.setError("Your password must have at least 6 characters.");
+            newPassword.setError(getString(R.string.enter_valid_pasword));
             return false;
         } else if (!newPassword.getText().toString().equals(confirmPassword.getText().toString())) {
-            txtMatchError.setText("The password doesn't match");
+            txtMatchError.setText(getString(R.string.password_not_match));
             return false;
         }
         return true;
@@ -146,7 +146,7 @@ public class SecurityActivity extends AppCompatActivity {
 
 
         } catch (SQLiteException ex) {
-            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
             return false;
         }
         return true;
@@ -164,14 +164,14 @@ public class SecurityActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         try {
-            if(cursor != null){
+            if (cursor != null) {
                 cursor.close();
             }
-            if(db != null){
+            if (db != null) {
                 db.close();
             }
         } catch (Exception ex) {
-            Toast.makeText(getApplicationContext(), "Error closing database or cursor", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
     }
 
