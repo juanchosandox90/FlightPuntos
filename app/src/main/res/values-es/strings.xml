@@ -52,6 +52,8 @@
     <string name="already_account_label">¿Ya tienes una cuenta? Ingresa</string>
     <string name="register_label">Registrate</string>
 
+    <string name="text_welcome">Bienvenido a Vuelos Puntos, el app que te permite reservar tus vuelos de manera comoda y personalizada</string>
+
     <string-array name="sort">
         <item>Fare</item>
         <item>Travel time</item>

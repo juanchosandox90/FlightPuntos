@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import app.sandoval.com.flightpuntos.HelperUtils.HelperUtilities;
 import app.sandoval.com.flightpuntos.R;
@@ -43,8 +42,6 @@ public class LoginActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(MY_PREFERENCES, 0);
         Boolean loggedIn = sharedPreferences.getBoolean(LOGIN_STATUS, false);//login status
-
-        //checks the login status and redirects to the main activity
         if (loggedIn) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
@@ -74,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    //process login
     public void attemptLogin() {
 
         try {
@@ -83,8 +79,6 @@ public class LoginActivity extends AppCompatActivity {
             db = databaseHelper.getReadableDatabase();
 
             isValid = isValidUserInput();
-
-            //filters the user input
 
             String filteredEmail = HelperUtilities.filter(inputEmail.getText().toString());
             String filteredPassword = HelperUtilities.filter(inputPassword.getText().toString());
@@ -98,9 +92,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     String email = cursor.getString(1);
                     clientID = cursor.getInt(3);
-
-                    //Toast.makeText(getApplicationContext(), "client id " + String.valueOf(clientID), Toast.LENGTH_SHORT).show();
-
                     sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
 
@@ -125,7 +116,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    //validate user input
     public boolean isValidUserInput() {
         if (HelperUtilities.isEmptyOrNull(inputEmail.getText().toString())) {
             txtLoginError.setText(R.string.invalid_email_password);
@@ -156,7 +146,6 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
-
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

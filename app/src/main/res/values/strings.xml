@@ -53,6 +53,7 @@
     <string name="login_label">Login</string>
     <string name="already_account_label">Already have an account? Login</string>
     <string name="register_label">Register</string>
+    <string name="text_welcome">Welcome to Flight Puntos, the app that allow you to make your own flight reservation</string>
 
     <string-array name="sort">
         <item>Fare</item>

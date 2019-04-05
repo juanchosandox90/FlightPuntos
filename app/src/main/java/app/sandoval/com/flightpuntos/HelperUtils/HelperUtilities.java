@@ -1,10 +1,26 @@
 package app.sandoval.com.flightpuntos.HelperUtils;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class HelperUtilities {
 
+
+    public static boolean isValidPostalCode(String postalCode) {
+        String regexPostalCode = "[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]";
+
+        if (postalCode.matches(regexPostalCode)) {
+            return true;
+        }
+        return false;
+    }
 
     public static boolean isValidEmail(String email) {
         String regexEmail = "([_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
@@ -67,6 +83,65 @@ public class HelperUtilities {
 
     }
 
+    public static String getDateTime() {
+
+        return DateFormat.getDateInstance().format(new Date());
+
+    }
+    public static String formatDate(int y, int m, int d){
+
+        try{
+            String date = d + "/" + (m+1) +"/" + y;
+            Date date1= new SimpleDateFormat("dd/MM/yyyy").parse(date);
+            DateFormat fullDf = DateFormat.getDateInstance(DateFormat.FULL);
+
+            return fullDf.format(date1);
+
+        }catch(Exception e){
+
+        }
+
+        return null;
+    }
+
+    public static int currentYear(){
+
+        Calendar c = Calendar.getInstance();
+        return c.get(Calendar.YEAR);
+    }
+
+    public static int currentMonth(){
+        Calendar c = Calendar.getInstance();
+        return c.get(Calendar.MONTH);
+    }
+
+    public static int currentDay(){
+        Calendar c = Calendar.getInstance();
+        return c.get(Calendar.DAY_OF_MONTH);
+    }
+
+    public static String maskCardNumber(String cardNumber) {
+
+
+        int index = 0;
+        String mask = "************####";
+        StringBuilder maskedNumber = new StringBuilder();
+        for (int i = 0; i < mask.length(); i++) {
+            char c = mask.charAt(i);
+            if (c == '#') {
+                maskedNumber.append(cardNumber.charAt(index));
+                index++;
+            } else if (c == '*') {
+                maskedNumber.append(c);
+                index++;
+            } else {
+                maskedNumber.append(c);
+            }
+        }
+
+        return maskedNumber.toString();
+    }
+
     public static String capitalize(String str) {
         return str.length() == 0 ? str : str.substring(0, 1).toUpperCase() + str.substring(1);
     }
@@ -115,5 +190,73 @@ public class HelperUtilities {
         }
 
         return true;
+    }
+
+    //calculates the size of the uploaded image
+    public static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) >= reqHeight
+                    && (halfWidth / inSampleSize) >= reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+
+        return inSampleSize;
+    }
+
+    //reduces the size of the image
+    public static Bitmap decodeSampledBitmapFromByteArray(byte[] res, int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeByteArray(res, 0, res.length, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+
+        return BitmapFactory.decodeByteArray(res, 0, res.length, options);
+
+    }
+
+    public static Double calculateTotalFare(double outboundFare, double returnFare, int numTraveller){
+        return (outboundFare + returnFare) * numTraveller;
+    }
+
+    public static Double calculateTotalFare(double fare, int numTraveller){
+        return fare * numTraveller;
+    }
+
+    public static boolean compareDate(String departureDate, String returnDate){
+
+        try{
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date date1 = sdf.parse(departureDate);
+            Date date2 = sdf.parse(returnDate);
+
+            if (date2.before(date1)) {
+                return true;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return false;
     }
 }
