@@ -9,11 +9,21 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import app.sandoval.com.flightpuntos.HelperUtils.HelperUtilities;
 import app.sandoval.com.flightpuntos.R;
@@ -22,6 +32,7 @@ import app.sandoval.com.flightpuntos.database.DatabaseHelper;
 public class RegisterActivity extends AppCompatActivity {
 
     private int clientID;
+    private FirebaseAuth mAuth;
     private EditText inputFirstName;
     private EditText inputLastName;
     private EditText inputEmail;
@@ -29,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText inputConfirmPassword;
     private EditText inputPassword;
     private boolean isValid;
+    private ProgressBar progressBar;
     private SQLiteOpenHelper registerDatabaseHelper;
     private SQLiteDatabase db;
     private Cursor cursor;
@@ -42,7 +54,8 @@ public class RegisterActivity extends AppCompatActivity {
         Button register = (Button) findViewById(R.id.btnRegister);
         TextView linkLogin = (TextView) findViewById(R.id.linkLogin);
 
-
+        mAuth = FirebaseAuth.getInstance();
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         inputFirstName = (EditText) findViewById(R.id.txtFirstName);
         inputLastName = (EditText) findViewById(R.id.txtLastName);
         inputEmail = (EditText) findViewById(R.id.txtEmail);
@@ -53,8 +66,26 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
+                String email = inputEmail.getText().toString();
+                String password = inputPassword.getText().toString();
+                isValid = isValidUserInput();
+                if (isValid) {
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    progressBar.setVisibility(View.GONE);
+                                    if (task.isSuccessful()) {
+                                        registerNewUser();
+                                    } else {
+                                        Toast.makeText(RegisterActivity.this, R.string.authentication_failed,
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                } else progressBar.setVisibility(View.INVISIBLE);
 
-                registerNewUser();
             }
         });
 
@@ -86,36 +117,36 @@ public class RegisterActivity extends AppCompatActivity {
             cursor = DatabaseHelper.selectAccount(db, HelperUtilities.filter(inputEmail
                     .getText().toString()));
 
-            isValid = isValidUserInput();
-            if (isValid) {
-                if (cursor != null && cursor.getCount() > 0) {
-                    accountExistsAlert().show();
-                } else {
-                    DatabaseHelper.insertClient(db,
-                            inputFirstName.getText().toString(),
-                            inputLastName.getText().toString(),
-                            inputPhone.getText().toString());
 
-                    cursor = DatabaseHelper.selectClientID(db,
-                            inputFirstName.getText().toString(),
-                            inputLastName.getText().toString(),
-                            inputPhone.getText().toString());
+            if (cursor != null && cursor.getCount() > 0) {
+                accountExistsAlert().show();
+            } else {
+                DatabaseHelper.insertClient(db,
+                        inputFirstName.getText().toString(),
+                        inputLastName.getText().toString(),
+                        inputPhone.getText().toString());
 
-                    if (cursor != null && cursor.getCount() == 1) {
-                        cursor.moveToFirst();
+                cursor = DatabaseHelper.selectClientID(db,
+                        inputFirstName.getText().toString(),
+                        inputLastName.getText().toString(),
+                        inputPhone.getText().toString());
 
-                        DatabaseHelper.insertAccount(db,
-                                inputEmail.getText().toString(),
-                                inputPassword.getText().toString(),
-                                cursor.getInt(0));
+                if (cursor != null && cursor.getCount() == 1) {
+                    cursor.moveToFirst();
 
-                        registrationSuccessDialog().show();
-                    }
+                    DatabaseHelper.insertAccount(db,
+                            inputEmail.getText().toString(),
+                            inputPassword.getText().toString(),
+                            cursor.getInt(0));
+
+                    registrationSuccessDialog().show();
                 }
             }
 
+
         } catch (SQLiteException e) {
             e.printStackTrace();
+            Log.e("stackTrace", e.toString());
         }
     }
 
@@ -215,6 +246,7 @@ public class RegisterActivity extends AppCompatActivity {
             db.close();
         } catch (Exception ex) {
             ex.printStackTrace();
+            Log.e("stackDestroy", ex.toString());
         }
     }
 }

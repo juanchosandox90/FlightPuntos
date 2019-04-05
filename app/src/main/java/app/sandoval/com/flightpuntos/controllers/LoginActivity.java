@@ -7,12 +7,21 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import app.sandoval.com.flightpuntos.HelperUtils.HelperUtilities;
 import app.sandoval.com.flightpuntos.R;
@@ -26,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     public static final String LOGIN_STATUS = "LOGGED_IN";
     public static SharedPreferences sharedPreferences;
     private EditText inputEmail;
+    private FirebaseAuth mAuth;
+    private ProgressBar progressBar;
     private EditText inputPassword;
     private TextView txtLoginError;
     private boolean isValid;
@@ -39,7 +50,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        mAuth = FirebaseAuth.getInstance();
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         sharedPreferences = getSharedPreferences(MY_PREFERENCES, 0);
         Boolean loggedIn = sharedPreferences.getBoolean(LOGIN_STATUS, false);//login status
         if (loggedIn) {
@@ -56,12 +68,35 @@ public class LoginActivity extends AppCompatActivity {
         inputPassword = (EditText) findViewById(R.id.password);
         txtLoginError = (TextView) findViewById(R.id.txtLoginError);
 
+        mAuth = FirebaseAuth.getInstance();
+
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                progressBar.setVisibility(View.VISIBLE);
+                isValid = isValidUserInput();
+                String email = inputEmail.getText().toString();
+                String password = inputPassword.getText().toString();
+                if (isValid) {
+                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(
+                            LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    progressBar.setVisibility(View.GONE);
+                                    if (task.isSuccessful()) {
+                                        attemptLogin();
+                                    } else {
+                                        Toast.makeText(LoginActivity.this, getString(R.string.failed_login), Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            }
+                    );
+                } else progressBar.setVisibility(View.INVISIBLE);
             }
         });
+
+
         linkRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     public void attemptLogin() {
@@ -78,42 +114,41 @@ public class LoginActivity extends AppCompatActivity {
             databaseHelper = new DatabaseHelper(getApplicationContext());
             db = databaseHelper.getReadableDatabase();
 
-            isValid = isValidUserInput();
-
             String filteredEmail = HelperUtilities.filter(inputEmail.getText().toString());
             String filteredPassword = HelperUtilities.filter(inputPassword.getText().toString());
 
-            if (isValid) {
 
-                cursor = DatabaseHelper.login(db, filteredEmail, filteredPassword);
+            cursor = DatabaseHelper.login(db, filteredEmail, filteredPassword);
 
-                if (cursor != null && cursor.getCount() == 1) {
-                    cursor.moveToFirst();
+            if (cursor != null && cursor.getCount() == 1) {
+                cursor.moveToFirst();
 
-                    String email = cursor.getString(1);
-                    clientID = cursor.getInt(3);
-                    sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                String email = cursor.getString(1);
+                clientID = cursor.getInt(3);
+                sharedPreferences = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                    editor.putInt(CLIENT_ID, clientID);
-                    editor.putString(EMAIL, email);
-                    editor.putBoolean(LOGIN_STATUS, true);
+                editor.putInt(CLIENT_ID, clientID);
+                editor.putString(EMAIL, email);
+                editor.putBoolean(LOGIN_STATUS, true);
 
-                    editor.commit();
+                editor.commit();
 
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
 
-                } else {
+            } else {
 
-                    txtLoginError.setText(R.string.invalid_email_password);
-                }
+                txtLoginError.setText(R.string.invalid_email_password);
             }
 
-        } catch (SQLiteException ex) {
+
+        } catch (
+                SQLiteException ex) {
             ex.printStackTrace();
         }
+
     }
 
     public boolean isValidUserInput() {
