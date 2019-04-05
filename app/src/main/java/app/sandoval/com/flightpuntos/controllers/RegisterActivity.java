@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import app.sandoval.com.flightpuntos.HelperUtils.HelperUtilities;
 import app.sandoval.com.flightpuntos.R;
