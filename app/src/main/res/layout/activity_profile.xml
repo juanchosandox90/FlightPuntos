@@ -2,26 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorLightGray">
+    android:background="@color/colorLightGray"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:layout_weight="2"
-                android:gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@color/backgroundDefault">
-
+                android:layout_weight="2"
+                android:background="@color/backgroundDefault"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp">
 
 
                 <ImageView
@@ -30,22 +31,22 @@
                     android:layout_height="150dp"
                     android:layout_marginTop="25dp"
                     android:gravity="center"
-                    android:src="@drawable/placeholder"/>
+                    android:src="@drawable/placeholder" />
 
                 <TextView
                     android:id="@+id/txtFullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="25sp"
+                    android:layout_marginTop="16dp"
                     android:fontFamily="sans-serif-thin"
                     android:gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:text="John Doe"/>
+                    android:text="John Doe"
+                    android:textSize="25sp" />
 
                 <ImageButton
                     android:id="@+id/btnEditProfilePicture"
-                    android:layout_height="30dip"
                     android:layout_width="30dip"
+                    android:layout_height="30dip"
                     android:layout_gravity="right"
                     android:background="@drawable/ic_add_a_photo_black_24dp" />
 
@@ -55,21 +56,21 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:padding="15dp"
-                android:gravity="center"
                 android:layout_marginBottom="16dp"
-                android:background="@color/backgroundDefault">
+                android:layout_weight="1"
+                android:background="@color/backgroundDefault"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <TextView
                     android:id="@+id/profileHeading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:textSize="25sp"
                     android:fontFamily="sans-serif-thin"
-                    android:text="@string/account_information_label" />
+                    android:text="@string/account_information_label"
+                    android:textSize="25sp" />
 
 
                 <TextView
@@ -77,34 +78,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="@string/firstname_profile_label"/>
+                    android:text="@string/firstname_profile_label" />
 
                 <TextView
                     android:id="@+id/txtClientLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="@string/last_name_profile_label"/>
+                    android:text="@string/last_name_profile_label" />
+
                 <TextView
                     android:id="@+id/txtClientEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="@string/email_profile_label"/>
+                    android:text="@string/email_profile_label" />
+
                 <TextView
                     android:id="@+id/txtClientPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="@string/phone_profile_label"/>
-
-                <ImageButton
-                    android:id="@+id/btnEditProfile"
-                    android:layout_height="30dip"
-                    android:layout_width="30dip"
-                    android:layout_gravity="right"
-                    android:background="@drawable/ic_edit_black_24dp" />
-
+                    android:text="@string/phone_profile_label" />
 
 
             </LinearLayout>

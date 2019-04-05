@@ -46,7 +46,6 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView clientEmail;
     private TextView clientPhone;
     private TextView fullName;
-    private ImageButton editProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +54,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         profileImage = (ImageView) findViewById(R.id.profileImage);
         uploadImage = (ImageButton) findViewById(R.id.btnEditProfilePicture);
-        editProfile = (ImageButton) findViewById(R.id.btnEditProfile);
 
         clientID = clientID();
 
@@ -67,14 +65,6 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent uploadImageIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(uploadImageIntent, REQUEST_CODE);
-            }
-        });
-
-        editProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                intent = new Intent(getApplicationContext(), EditProfileActivity.class);
-                startActivity(intent);
             }
         });
     }
