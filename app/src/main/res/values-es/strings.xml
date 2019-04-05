@@ -53,10 +53,50 @@
     <string name="register_label">Registrate</string>
 
     <string name="text_welcome">Bienvenido a Vuelos Puntos, el app que te permite reservar tus vuelos de manera comoda y personalizada</string>
+    <string name="version_label">Versión</string>
+    <string name="save_label">Guardar</string>
+
+    <string name="client_name_label">Nombre del Cliente: </string>
+    <string name="payment_label">Pago: </string>
+    <string name="booking_date_label">Fecha de Reservación: </string>
+    <string name="flight_no_label">Vuelo No: </string>
+    <string name="origin_label">Origen: </string>
+    <string name="destination_label">Destino: </string>
+    <string name="departure_date_label">Fecha de Ida: </string>
+    <string name="arrival_date_label">Fecha de Regreso: </string>
+    <string name="departure_time_label">Hora de Ida: </string>
+    <string name="arrival_time_label">Hora de Regreso: </string>
+    <string name="flight_duration_label">Duración del Vuelo: </string>
+    <string name="flight_class_label">Clase de Cabina:</string>
+    <string name="number_of_traveller_label"># del Viajero:</string>
+    <string name="fare_label">Tarifa: </string>
+    <string name="total_fare_label">Tarifa Total:</string>
+    <string name="cancel_flight_label">Cancelar Vuelo</string>
+    <string name="no_booked_flights">No tienes vuelos reservados hasta el momento. </string>
+    <string name="sort_label">Ordenar</string>
+    <string name="flight_is_not_available">El vuelo que buscas no se encuentra disponible. Intenta mas tarde.</string>
+    <string name="round_flight_is_not_available">El vuelo, ida y vuelta que buscas, no se encuentra disponible. Intenta otra combinación de vuelos.</string>
+    <string name="account_information_label">Informacion de la Cuenta</string>
+    <string name="firstname_profile_label">Nombre: </string>
+    <string name="last_name_profile_label">Apellido: </string>
+    <string name="email_profile_label">Correo: </string>
+    <string name="phone_profile_label">Telefono: </string>
+    <string name="change_password_label">Cambiar Contraseña</string>
+    <string name="old_password_label">Contraseña Anterior</string>
+    <string name="new_password_label">Nueva Contraseña</string>
+    <string name="confirm_password_label">Confirmar Contraseña</string>
+    <string name="one_traveller_label">1 Viajero</string>
+    <string name="economy_label">Economica</string>
+    <string name="search_label">Buscar</string>
+    <string name="traveller_label">viajero</string>
+    <string name="book_flight_label">Reservar vuelo</string>
+    <string name="outbound_are_label">Ida son:</string>
+    <string name="return_fare_label">Tarifa de regreso:</string>
+
 
     <string-array name="sort">
-        <item>Fare</item>
-        <item>Travel time</item>
+        <item>Tarifa</item>
+        <item>Tiempo de Vuelo</item>
     </string-array>
 
 

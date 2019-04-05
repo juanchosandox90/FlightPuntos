@@ -30,7 +30,7 @@
                 android:background="@drawable/bgrounded"
                 android:padding="15dp"
                 android:textSize="18sp"
-                android:text="The specified round flight is not available at this time. Please try again with a different combination. " />
+                android:text="@string/round_flight_is_not_available" />
 
         </LinearLayout>
 
@@ -41,7 +41,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/colorAccent"
             android:textColor="@android:color/white"
-            android:text="Sort"
+            android:text="@string/sort_label"
             android:textSize="18sp"
             android:textAllCaps="false"
             android:fontFamily="sans-serif"/>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="@drawable/bgrounded"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/bgrounded"
+    android:orientation="vertical"
     android:padding="10dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,8 +14,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="6">
+            android:layout_weight="6"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/txtDepartureTime"
@@ -25,30 +26,32 @@
                 android:text="5:40pm"
                 android:textSize="20sp"
                 android:typeface="normal" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:fontFamily="sans-serif-medium"
-                android:typeface="normal"
+                android:text="-"
                 android:textSize="20sp"
-                android:text="-"/>
+                android:typeface="normal" />
+
             <TextView
                 android:id="@+id/txtArrivalTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:typeface="normal"
+                android:text="6:59pm"
                 android:textSize="20sp"
-                android:text="6:59pm"/>
+                android:typeface="normal" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="1dp"
@@ -56,63 +59,65 @@
                 android:layout_margin="0dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-medium"
-                android:typeface="normal"
                 android:text="$"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:typeface="normal" />
+
             <TextView
                 android:id="@+id/txtFare"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:typeface="normal"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="350"
                 android:textSize="20sp"
-                android:text="350"/>
+                android:typeface="normal" />
 
         </LinearLayout>
 
 
     </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtAirline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="18sp"
-            android:text="WestJet"/>
+    <TextView
+        android:id="@+id/txtAirline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-medium"
+        android:text="WestJet"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/txtTravelTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="18sp"
-            android:text="1"/>
+            android:text="1"
+            android:textSize="18sp" />
+
         <TextView
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
             android:layout_weight="50"
             android:fontFamily="sans-serif-medium"
-            android:typeface="normal"
             android:text="h"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:typeface="normal" />
 
     </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtClass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:text="Economy"/>
+    <TextView
+        android:id="@+id/txtClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/economy_label"
+        android:textSize="18sp" />
 </LinearLayout>

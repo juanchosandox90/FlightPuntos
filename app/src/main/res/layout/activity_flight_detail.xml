@@ -36,7 +36,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Client Name: "
+                            android:text="@string/client_name_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -57,7 +57,7 @@
                             android:layout_below="@+id/fName"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Payment: "
+                            android:text="@string/payment_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -78,7 +78,7 @@
                             android:layout_below="@+id/creditCard"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Booking date: "
+                            android:text="@string/booking_date_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -127,7 +127,7 @@
                             android:layout_below="@+id/txtAirlineDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Flight No: "
+                            android:text="@string/flight_no_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -148,7 +148,7 @@
                             android:layout_below="@+id/flightNoDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Origin: "
+                            android:text="@string/origin_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -170,7 +170,7 @@
                             android:layout_below="@+id/originDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Destination: "
+                            android:text="@string/destination_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -191,7 +191,7 @@
                             android:layout_below="@+id/destinationDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Departure Date: "
+                            android:text="@string/departure_date_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -212,7 +212,7 @@
                             android:layout_below="@+id/departureDateDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Arrival Date: "
+                            android:text="@string/arrival_date_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -233,7 +233,7 @@
                             android:layout_below="@+id/arrivalDateDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Departure time: "
+                            android:text="@string/departure_time_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -255,7 +255,7 @@
                             android:layout_below="@+id/departureTimeDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Arrival time: "
+                            android:text="@string/arrival_time_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -276,7 +276,7 @@
                             android:layout_below="@+id/arrivalTimeDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Flight duration: "
+                            android:text="@string/flight_duration_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -298,7 +298,7 @@
                             android:layout_below="@+id/durationDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Flight class: "
+                            android:text="@string/flight_class_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -338,7 +338,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="# of traveller: "
+                            android:text="@string/number_of_traveller_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -359,7 +359,7 @@
                             android:layout_below="@+id/travellerDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Fare: "
+                            android:text="@string/fare_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -380,7 +380,7 @@
                             android:layout_below="@+id/fareDetail"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:text="Total fare: "
+                            android:text="@string/total_fare_label"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -409,7 +409,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/colorAccent"
             android:fontFamily="sans-serif"
-            android:text="Cancel flight"
+            android:text="@string/cancel_flight_label"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18sp" />

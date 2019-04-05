@@ -94,7 +94,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/colorAccent"
             android:fontFamily="sans-serif"
-            android:text="Save"
+            android:text="@string/save_label"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18sp" />

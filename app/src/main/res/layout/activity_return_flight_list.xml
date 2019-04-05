@@ -36,7 +36,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/colorAccent"
             android:textColor="@android:color/white"
-            android:text="Sort"
+            android:text="@string/sort_label"
             android:textSize="18sp"
             android:textAllCaps="false"
             android:fontFamily="sans-serif"/>

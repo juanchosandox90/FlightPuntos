@@ -21,7 +21,7 @@
         android:layout_height="120dp"
         android:background="@drawable/bgrounded"
         android:padding="15dp"
-        android:text="You have no booked flights at this time."
+        android:text="@string/no_booked_flights"
         android:textSize="18sp" />
 
 </LinearLayout>
