@@ -1,0 +1,149 @@
+<resources>
+    <string name="app_name">Vuelos Puntos</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Configuración</string>
+    <string name="title_activity_login">sign in</string>
+
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_phone">Telefono</string>
+    <string name="prompt_credit_card">Tarjeta de Crédito</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="prompt_confirm_password">Confirma tu Contraseña</string>
+    <string name="action_login">Ingresa</string>
+    <string name="action_register">Registrate</string>
+
+
+    <string name="prompt_flyingfrom">Volando desde</string>
+    <string name="prompt_flyingto">Volando hacia</string>
+    <string name="prompt_departure_date">Fecha de salida</string>
+    <string name="prompt_return_date">Fecha de regreso</string>
+    <string name="prompt_traveller">Select Traveller</string>
+    <string name="prompt_class">Selecciona la clase</string>
+    <string name="prompt_first_name">Primer Nombre</string>
+    <string name="prompt_last_name">Apellido</string>
+    <string name="alert_dialog_two_buttons_title">My Title</string>
+
+    <string name="succesful_register">Tu perfil fue creado!</string>
+    <string name="database_unavailable">Error en la base datos</string>
+    <string name="account_exist">Una cuenta con este correo ya existe. Por favor intenta con otro email.</string>
+    <string name="ok_button">OK</string>
+    <string name="enter_first_name">Por favor ingresa tu nombre</string>
+    <string name="enter_valid_first_name">Por favor ingresa un nombre valido</string>
+    <string name="enter_last_name">por favor ingresa tu apellido</string>
+    <string name="enter_valid_last_name">Por favor ingresa un apellido valido</string>
+    <string name="enter_email">Por favor ingresa tu correo</string>
+    <string name="enter_valid_email">Por favor ingresa un correo valido</string>
+    <string name="enter_phone">Por favor ingresa tu número de telefono</string>
+    <string name="enter_valid_phone">Por favor ingresa un número de telefono valido</string>
+    <string name="enter_credit_card">Por favor ingresa tu número de tarjeta de crédito</string>
+    <string name="enter_valid_credit_card">Por favor ingresa un número de tarjeta de crédito valido</string>
+    <string name="enter_password">Por favor ingresa tu contraseña</string>
+    <string name="enter_valid_pasword">Tu contraseña debe tener minimo 6 caracteres</string>
+    <string name="confirm_password">Por favor confirma tu contraseña</string>
+    <string name="password_not_match">Las contraseñas no coinciden</string>
+    <string name="error_closing_db">Error cerrando la base de datos.</string>
+    <string name="invalid_email_password">Correo o contraseña invalidas. Intenta de nuevo.</string>
+    <string name="account_register_label">¿Aún no tienes cuenta? Registrate</string>
+    <string name="login_label">Ingresa</string>
+    <string name="already_account_label">¿Ya tienes una cuenta? Ingresa</string>
+    <string name="register_label">Registrate</string>
+
+    <string name="text_welcome">Bienvenido a Vuelos Puntos, el app que te permite reservar tus vuelos de manera comoda y personalizada</string>
+    <string name="version_label">Versión</string>
+    <string name="save_label">Guardar</string>
+
+    <string name="client_name_label">Nombre del Cliente: </string>
+    <string name="payment_label">Pago: </string>
+    <string name="booking_date_label">Fecha de Reservación: </string>
+    <string name="flight_no_label">Vuelo No: </string>
+    <string name="origin_label">Origen: </string>
+    <string name="destination_label">Destino: </string>
+    <string name="departure_date_label">Fecha de Ida: </string>
+    <string name="arrival_date_label">Fecha de Regreso: </string>
+    <string name="departure_time_label">Hora de Ida: </string>
+    <string name="arrival_time_label">Hora de Regreso: </string>
+    <string name="flight_duration_label">Duración del Vuelo: </string>
+    <string name="flight_class_label">Clase de Cabina:</string>
+    <string name="number_of_traveller_label"># del Viajero:</string>
+    <string name="fare_label">Tarifa: </string>
+    <string name="total_fare_label">Tarifa Total:</string>
+    <string name="cancel_flight_label">Cancelar Vuelo</string>
+    <string name="no_booked_flights">No tienes vuelos reservados hasta el momento. </string>
+    <string name="sort_label">Ordenar</string>
+    <string name="flight_is_not_available">El vuelo que buscas no se encuentra disponible. Intenta mas tarde.</string>
+    <string name="round_flight_is_not_available">El vuelo, ida y vuelta que buscas, no se encuentra disponible. Intenta otra combinación de vuelos.</string>
+    <string name="account_information_label">Informacion de la Cuenta</string>
+    <string name="firstname_profile_label">Nombre: </string>
+    <string name="last_name_profile_label">Apellido: </string>
+    <string name="email_profile_label">Correo: </string>
+    <string name="phone_profile_label">Telefono: </string>
+    <string name="change_password_label">Cambiar Contraseña</string>
+    <string name="old_password_label">Contraseña Anterior</string>
+    <string name="new_password_label">Nueva Contraseña</string>
+    <string name="confirm_password_label">Confirmar Contraseña</string>
+    <string name="one_traveller_label">1 Viajero</string>
+    <string name="economy_label">Economica</string>
+    <string name="business_label">Ejecutiva</string>
+    <string name="search_label">Buscar</string>
+    <string name="traveller_label">viajero</string>
+    <string name="book_flight_label">Reservar vuelo</string>
+    <string name="outbound_are_label">Ida son:</string>
+    <string name="return_fare_label">Tarifa de regreso:</string>
+
+
+    <string name="book_successfully_label">Tu reservacion ha sido exitosa.</string>
+    <string name="ok_button_label">Ok</string>
+    <string name="already_booked_flight">Ya has reservado este vuelo. </string>
+    <string name="already_round_flight">Ya has reservado, el vuelo de regreso o el de ida. Por favor selecciona otro vuelo nuevamente.</string>
+    <string name="profile_updated_successfull">El perfil se ha actualizado exitosamente! </string>
+    <string name="yes_label">Si</string>
+    <string name="cancel_dialog">Cancelar</string>
+    <string name="cancel_flight_question">¿Estas seguro que quieres cancelar este vuelo? </string>
+    <string name="one_way_tab_label">Solo Ida</string>
+    <string name="round_trip_tab_label">Ida y Vuelta</string>
+    <string name="itinerary_title">Itinerario</string>
+    <string name="account_title">Cuenta</string>
+    <string name="profile_title">Perfil</string>
+    <string name="security_settings_title">Configuraciones de Seguridad</string>
+    <string name="about_title">Acerca de</string>
+    <string name="logout_title">Salir</string>
+    <string name="select_class_label">Selecciona Cabina</string>
+    <string name="number_of_travellers_label">Número de viajeros</string>
+    <string name="select_valid_return_date">Por favor selecciona una fecha de regreso valida. La fecha de regreso no puede ser antes de la fecha de partida.</string>
+    <string name="select_departure_date">Por favor selecciona una fecha de partida.</string>
+    <string name="select_return_date">Por favor selecciona una fecha de ida.</string>
+    <string name="enter_origin">Por favor ingresa el origen</string>
+    <string name="enter_valid_origin">Por favor ingresa un origen valid</string>
+    <string name="enter_destination">Por favor ingresa tu destino</string>
+    <string name="enter_valid_destination">Por favor ingresa un destino valid</string>
+    <string name="select_one_way_flight">Selecciona tu viaje de ida</string>
+    <string name="sort_by_label">Ordenar por</string>
+    <string name="select_outbound_flight">Selecciona tu vuelo de salida</string>
+    <string name="round_flight_not_available">TEl vuelo de ida y vuelta no esta disponible. Por favor intenta mas tarde.</string>
+    <string name="profile_first_name_label">Nombre: </string>
+    <string name="profile_last_name_label">Apellido: </string>
+    <string name="profile_phone_label">Telefono: </string>
+    <string name="profile_email_label">Correo: </string>
+    <string name="select_return_flight">Selecciona el vuelo de regreso</string>
+    <string name="return_flight_not_available">El vuelo de regreso especificado no esta disponible. Por favor intenta mas tarde.</string>
+    <string name="password_change_successfully">Tu contraseña se cambio exitosamente! </string>
+    <string name="incorrect_password">Contraseña Incorrecta</string>
+    <string name="enter_new_password">Por favor ingresa tu nueva contraseña</string>
+    <string name="confirm_new_password">Por favor confirma tu nueva contraseña</string>
+    <string name="traveller_count_label">Viajeros</string>
+    <string name="edit_profile_title">Editar Perfil</string>
+    <string name="flight_detail_title">Detalle del Vuelo</string>
+    <string name="flight_list_title">Lista de Vuelos</string>
+    <string name="checkout_title">Checkout</string>
+
+    <string-array name="sort">
+        <item>Tarifa</item>
+        <item>Tiempo de Vuelo</item>
+    </string-array>
+
+
+</resources>
