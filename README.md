@@ -3,17 +3,14 @@ App for testing flight search with Puntos Colombia.
 
 # Implementation
 
-The app archictecture is MVC. Im using SQLiteDatabase to Register, Login, and Mock the Flights Information. Any user can register and login with the registered account. Is validating correct email, correct name lenght, and some other validations.
+The app archictecture is MVC. Im using SQLiteDatabase mock the Flights Information. Any user can register and login with the registered account via Firebase. Is validating correct email, correct name lenght, and some other validations.
 Models will be created but no implemented. Instead, the mock will live in the Databasehelper for testing purposes. Also i implemented a profile visualization.
 
 # Techonologies
 #### Android Studio IDE
 #### JAVA
 #### SQLite
-
-# In Dev
-
-Still in developing mode, migration to Firebase for Login and Register. Checkin times. DeadLine: April 7th 2019.
+#### Firebase Authentication via Email/Password.
 
 # Data for Testing the book reservation
 
