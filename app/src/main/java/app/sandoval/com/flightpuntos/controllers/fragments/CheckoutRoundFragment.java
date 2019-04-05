@@ -1,4 +1,4 @@
-package app.sandoval.com.flightpuntos.controllers;
+package app.sandoval.com.flightpuntos.controllers.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -22,6 +22,8 @@ import android.widget.Toast;
 
 import app.sandoval.com.flightpuntos.HelperUtils.HelperUtilities;
 import app.sandoval.com.flightpuntos.R;
+import app.sandoval.com.flightpuntos.controllers.LoginActivity;
+import app.sandoval.com.flightpuntos.controllers.MainActivity;
 import app.sandoval.com.flightpuntos.database.DatabaseHelper;
 
 public class CheckoutRoundFragment extends Fragment {

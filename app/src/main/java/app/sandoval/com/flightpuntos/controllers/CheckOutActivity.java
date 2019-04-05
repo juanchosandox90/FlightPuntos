@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import app.sandoval.com.flightpuntos.R;
+import app.sandoval.com.flightpuntos.controllers.fragments.CheckoutOnewayFragment;
+import app.sandoval.com.flightpuntos.controllers.fragments.CheckoutRoundFragment;
 
 
 public class CheckOutActivity extends AppCompatActivity {
