@@ -97,13 +97,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:text="Email: 4162354874"/>
-                <TextView
-                    android:id="@+id/txtClientCreditCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="Credit Card: **** **** **** 2048"/>
-
 
                 <ImageButton
                     android:id="@+id/btnEditProfile"
