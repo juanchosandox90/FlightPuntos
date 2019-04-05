@@ -127,18 +127,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".controllers.MainActivity" />
         </activity>
-        <activity
-            android:name=".controllers.EditProfileActivity"
-            android:label="@string/edit_profile_title"
-            android:parentActivityName=".controllers.ProfileActivity"
-            android:windowSoftInputMode="stateHidden">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".controllers.MainActivity" />
-
-        </activity>
     </application>
 
 </manifest>

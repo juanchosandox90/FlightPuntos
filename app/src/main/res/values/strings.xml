@@ -140,6 +140,8 @@
     <string name="flight_detail_title">Flight Detail</string>
     <string name="flight_list_title">Flight list</string>
     <string name="checkout_title">Checkout</string>
+    <string name="authentication_failed">Authentication failed.</string>
+    <string name="failed_login">Failed Login!</string>
 
     <string-array name="sort">
         <item>Fare</item>

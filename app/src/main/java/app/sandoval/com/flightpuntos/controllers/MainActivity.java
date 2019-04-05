@@ -31,6 +31,8 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import app.sandoval.com.flightpuntos.HelperUtils.HelperUtilities;
 import app.sandoval.com.flightpuntos.R;
 import app.sandoval.com.flightpuntos.database.DatabaseHelper;
@@ -95,6 +97,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private boolean isValidOneWayDate = true;
     private boolean isValidRoundDate = true;
 
+    FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +119,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         header = navigationView.getHeaderView(0);
 
         clientID = clientID();
+
+        mAuth = FirebaseAuth.getInstance();
 
         final TabHost tabHost = (TabHost) findViewById(R.id.tabhost);
         tabHost.setup();
@@ -267,17 +273,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        return false;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -292,13 +292,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_profile) {
             Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_security) {
-            Intent intent = new Intent(getApplicationContext(), SecurityActivity.class);
-            startActivity(intent);
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_logout) {
+            mAuth.signOut();
             getApplicationContext().getSharedPreferences(LoginActivity.MY_PREFERENCES, 0).edit().clear().commit();
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);

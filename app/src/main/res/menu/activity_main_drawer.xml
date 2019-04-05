@@ -19,10 +19,6 @@
                 android:icon="@drawable/ic_account_box_black_24dp"
                 android:title="@string/profile_title" />
             <item
-                android:id="@+id/nav_security"
-                android:icon="@drawable/ic_security_black_24dp"
-                android:title="@string/security_settings_title" />
-            <item
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_info_black_24dp"
                 android:title="@string/about_title" />
@@ -32,7 +28,6 @@
                 android:title="@string/logout_title" />
 
         </menu>
-
 
     </item>
 

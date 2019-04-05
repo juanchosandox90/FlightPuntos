@@ -139,6 +139,8 @@
     <string name="flight_detail_title">Detalle del Vuelo</string>
     <string name="flight_list_title">Lista de Vuelos</string>
     <string name="checkout_title">Checkout</string>
+    <string name="authentication_failed">Falló la Autenticación.</string>
+    <string name="failed_login">Falló el Login!</string>
 
     <string-array name="sort">
         <item>Tarifa</item>
