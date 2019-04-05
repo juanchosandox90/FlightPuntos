@@ -19,21 +19,21 @@ Still in developing mode, migration to Firebase for Login and Register. Checkin 
 
 ## Oneway
 
-("Montreal", "Vancouver", "2019-7-28")
-("New York", "Miami", "2019-8-15")
-("Bogota", "New York", "2019-7-28")
-("Medellin", "Miami", "2019-8-25")
-("Los Angeles", "Seatle", "2019-8-26")
-("Cartagena", "Miami", "2019-8-27")
-("Cali", "New York", "2019-8-28", "2019-8-28")
+("Montreal", "Vancouver", "2019-7-28")<br />
+("New York", "Miami", "2019-8-15")<br />
+("Bogota", "New York", "2019-7-28")<br />
+("Medellin", "Miami", "2019-8-25")<br />
+("Los Angeles", "Seatle", "2019-8-26")<br />
+("Cartagena", "Miami", "2019-8-27")<br />
+("Cali", "New York", "2019-8-28", "2019-8-28")<br />
 
 
 ## RoundTrip
 
-("Bogota", "Miami", "2019-8-10", "2019-8-10")
-("Miami", "Bogota", "2019-8-12", "2019-8-12")
-("Medellin", "New York", "2019-8-25", "2018-8-25")
-("New York", "Medellin", "2019-9-27", "2018-9-27")
+("Bogota", "Miami", "2019-8-10", "2019-8-10")<br />
+("Miami", "Bogota", "2019-8-12", "2019-8-12")<br />
+("Medellin", "New York", "2019-8-25", "2018-8-25")<br />
+("New York", "Medellin", "2019-9-27", "2018-9-27")<br />
 
 # Author
 ### Juan Camilo Sandoval Devia - Multimedia Engineer
