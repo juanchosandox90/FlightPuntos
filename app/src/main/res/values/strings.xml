@@ -54,6 +54,45 @@
     <string name="already_account_label">Already have an account? Login</string>
     <string name="register_label">Register</string>
     <string name="text_welcome">Welcome to Flight Puntos, the app that allow you to make your own flight reservation</string>
+    <string name="version_label">Version</string>
+    <string name="save_label">Save</string>
+
+    <string name="client_name_label">Client Name:</string>
+    <string name="payment_label">Payment:</string>
+    <string name="booking_date_label">Booking date:</string>
+    <string name="flight_no_label">Flight No:</string>
+    <string name="origin_label">Origin:</string>
+    <string name="destination_label">Destination:</string>
+    <string name="departure_date_label">Departure Date:</string>
+    <string name="arrival_date_label">Arrival Date:</string>
+    <string name="departure_time_label">Departure time:</string>
+    <string name="arrival_time_label">Arrival time:</string>
+    <string name="flight_duration_label">Flight duration:</string>
+    <string name="flight_class_label">Flight class:</string>
+    <string name="number_of_traveller_label"># of traveller:</string>
+    <string name="fare_label">Fare:</string>
+    <string name="total_fare_label">Total fare:</string>
+    <string name="cancel_flight_label">Cancel flight</string>
+    <string name="no_booked_flights">You have no booked flights at this time.</string>
+    <string name="sort_label">Sort</string>
+    <string name="flight_is_not_available">The specified flight is not available at this time. Please try again later.</string>
+    <string name="round_flight_is_not_available">The specified round flight is not available at this time. Please try again with a different combination.</string>
+    <string name="account_information_label">Account Information</string>
+    <string name="firstname_profile_label">FirstName: </string>
+    <string name="last_name_profile_label">Last name: </string>
+    <string name="email_profile_label">Email: </string>
+    <string name="phone_profile_label">Phone: </string>
+    <string name="change_password_label">Change Password</string>
+    <string name="old_password_label">Old Password</string>
+    <string name="new_password_label">New Password</string>
+    <string name="confirm_password_label">Confirm Password</string>
+    <string name="one_traveller_label">1 Traveller</string>
+    <string name="economy_label">Economy</string>
+    <string name="search_label">Search</string>
+    <string name="traveller_label">traveller</string>
+    <string name="book_flight_label">Book flight</string>
+    <string name="outbound_are_label">Outbound are:</string>
+    <string name="return_fare_label">Return fare:</string>
 
     <string-array name="sort">
         <item>Fare</item>

@@ -69,7 +69,7 @@
                     android:layout_marginBottom="16dp"
                     android:textSize="25sp"
                     android:fontFamily="sans-serif-thin"
-                    android:text="Account Information" />
+                    android:text="@string/account_information_label" />
 
 
                 <TextView
@@ -77,26 +77,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="FirstName: John"/>
+                    android:text="@string/firstname_profile_label"/>
 
                 <TextView
                     android:id="@+id/txtClientLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="Las name: Doe"/>
+                    android:text="@string/last_name_profile_label"/>
                 <TextView
                     android:id="@+id/txtClientEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="Email: john.doe@gmail.com"/>
+                    android:text="@string/email_profile_label"/>
                 <TextView
                     android:id="@+id/txtClientPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="Email: 4162354874"/>
+                    android:text="@string/phone_profile_label"/>
 
                 <ImageButton
                     android:id="@+id/btnEditProfile"

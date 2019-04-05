@@ -104,5 +104,5 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="18sp"
-        android:text="Economy"/>
+        android:text="@string/economy_label"/>
 </LinearLayout>

@@ -613,7 +613,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         editor.putString("DESTINATION", HelperUtilities.filter(txtRoundTo.getText().toString().trim()));
         editor.putString("DEPARTURE_DATE", roundDepartureDate);
         editor.putString("RETURN_DATE", roundReturnDate);
-        editor.putString("FLIGHT_CLASS", btnOneWayClass.getText().toString());
+        editor.putString("FLIGHT_CLASS", btnOneWayClass.getText().toString().replace("Economica", "Economy"));
         editor.putInt("ROUND_NUM_TRAVELLER", roundTravellerCount);
 
 
