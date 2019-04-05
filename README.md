@@ -10,7 +10,7 @@ Models will be created but no implemented. Instead, the mock will live in the Da
 #### Android Studio IDE
 #### JAVA
 #### SQLite
-#### Firebase Authentication via Email/Password.
+#### Firebase Authentication via Email/Password.
 
 # Data for Testing the book reservation
 
