@@ -71,7 +71,7 @@ public class OneWayFlightListActivity extends AppCompatActivity {
 
         btnSort = (Button) findViewById(R.id.btnSort);
 
-        flightNotFound = (TextView)findViewById(R.id.txtOneWayFlightNotFound);
+        flightNotFound = (TextView) findViewById(R.id.txtOneWayFlightNotFound);
 
         flightNotFound.setVisibility(View.INVISIBLE);
 
@@ -106,10 +106,9 @@ public class OneWayFlightListActivity extends AppCompatActivity {
             }
 
 
-
             if (cursor != null && cursor.getCount() > 0) {
 
-                actionBar.setTitle("Select one way flight");
+                actionBar.setTitle(R.string.select_one_way_flight);
                 actionBar.setSubtitle(HelperUtilities.capitalize(origin) + " -> " + HelperUtilities.capitalize(destination));
 
                 CursorAdapter listAdapter = new SimpleCursorAdapter(getApplicationContext(),
@@ -149,14 +148,14 @@ public class OneWayFlightListActivity extends AppCompatActivity {
             });
 
         } catch (SQLiteException e) {
-            Toast.makeText(getApplicationContext(), "Database error", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
     }
 
     public Dialog sortDialog() {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Sort by")
+        builder.setTitle(R.string.sort_by_label)
                 .setItems(R.array.sort, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int id) {

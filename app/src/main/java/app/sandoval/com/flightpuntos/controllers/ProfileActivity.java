@@ -106,16 +106,16 @@ public class ProfileActivity extends AppCompatActivity {
                 Client client = new Client(fName, lName, phone, creditCard);
                 Account account = new Account(email);
 
-                clientFirstname.setText("First Name: " + client.getFirstName());
-                clientLastName.setText("Last Name: " + client.getLastName());
-                clientPhone.setText("Phone: " + client.getPhone());
-                clientEmail.setText("Email: " + account.getEmail());
+                clientFirstname.setText(getString(R.string.profile_first_name_label) + " " + client.getFirstName());
+                clientLastName.setText(getString(R.string.profile_last_name_label) + " " + client.getLastName());
+                clientPhone.setText(getString(R.string.profile_phone_label) + " " + client.getPhone());
+                clientEmail.setText(getString(R.string.profile_email_label) + " " + account.getEmail());
 
                 fullName.setText(client.getFirstName() + " " + client.getLastName());
             }
 
         } catch (SQLiteException ex) {
-            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
     }
 
@@ -162,17 +162,16 @@ public class ProfileActivity extends AppCompatActivity {
                             }
 
                         } catch (SQLiteException ex) {
-                            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+                            ex.printStackTrace();
                         }
 
                         break;
                     } else if (resultCode == Activity.RESULT_CANCELED) {
-                        Log.e(TAG, "Selecting picture cancelled");
                     }
                     break;
             }
         } catch (Exception e) {
-            Log.e(TAG, "Exception in onActivityResult : " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -197,7 +196,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
 
         } catch (SQLiteException ex) {
-            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
 
     }
@@ -209,7 +208,7 @@ public class ProfileActivity extends AppCompatActivity {
             cursor.close();
             db.close();
         } catch (Exception ex) {
-            Toast.makeText(getApplicationContext(), "Error closing database or cursor", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
     }
 }

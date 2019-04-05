@@ -73,7 +73,7 @@ public class OutboundFlightListActivity extends AppCompatActivity {
 
         btnSort = (Button) findViewById(R.id.btnOutboundSort);
 
-        flightNotFound = (TextView)findViewById(R.id.txtOutboundFlightNotFound);
+        flightNotFound = (TextView) findViewById(R.id.txtOutboundFlightNotFound);
 
         flightNotFound.setVisibility(View.INVISIBLE);
 
@@ -88,6 +88,7 @@ public class OutboundFlightListActivity extends AppCompatActivity {
         searchOutboundFlight();
 
     }
+
     public void searchOutboundFlight() {
         try {
             databaseHelper = new DatabaseHelper(getApplicationContext());
@@ -106,7 +107,7 @@ public class OutboundFlightListActivity extends AppCompatActivity {
 
             if (cursor != null && cursor.getCount() > 0) {
 
-                actionBar.setTitle("Select outbound flight");
+                actionBar.setTitle(R.string.select_outbound_flight);
                 actionBar.setSubtitle(HelperUtilities.capitalize(origin) + " -> " + HelperUtilities.capitalize(destination));
 
                 CursorAdapter listAdapter = new SimpleCursorAdapter(getApplicationContext(),
@@ -118,20 +119,20 @@ public class OutboundFlightListActivity extends AppCompatActivity {
 
                 flightList.setAdapter(listAdapter);
 
-            }else{
+            } else {
                 flightUnavailable = true;
             }
 
             cursor = DatabaseHelper.selectFlight(db, destination, origin,
                     returnDate, flightClass);
 
-            if (cursor != null && cursor.getCount() > 0){
+            if (cursor != null && cursor.getCount() > 0) {
 
-            }else{
+            } else {
                 flightUnavailable = true;
             }
 
-            if(flightUnavailable == true){
+            if (flightUnavailable == true) {
                 flightNotFound.setVisibility(View.VISIBLE);
                 btnSort.setVisibility(View.INVISIBLE);
             }
@@ -157,7 +158,7 @@ public class OutboundFlightListActivity extends AppCompatActivity {
 
 
         } catch (SQLiteException e) {
-            Toast.makeText(getApplicationContext(), "Database error", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
 
     }
@@ -165,9 +166,9 @@ public class OutboundFlightListActivity extends AppCompatActivity {
     public Dialog flightNotFoundDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("The specified round flight is not available. Please try again later.")
+        builder.setMessage(R.string.round_flight_not_available)
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -182,7 +183,7 @@ public class OutboundFlightListActivity extends AppCompatActivity {
     public Dialog sortDialog() {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Sort by")
+        builder.setTitle(R.string.sort_by_label)
                 .setItems(R.array.sort, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int id) {

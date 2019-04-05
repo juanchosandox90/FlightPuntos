@@ -161,16 +161,16 @@ public class FlightDetailActivity extends AppCompatActivity {
     public Dialog cancelFlightAlert() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure you want to cancel your flight? ")
+        builder.setMessage(R.string.cancel_flight_question)
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.yes_label, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         cancelFlight();
                         Intent intent = new Intent(getApplicationContext(), ItineraryActivity.class);
                         startActivity(intent);
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 

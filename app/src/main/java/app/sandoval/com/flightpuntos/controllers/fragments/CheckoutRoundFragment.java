@@ -179,7 +179,7 @@ public class CheckoutRoundFragment extends Fragment {
             }
 
         } catch (SQLiteException ex) {
-            Toast.makeText(getActivity().getApplicationContext(), "Database error occurred 1", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
     }
 
@@ -207,7 +207,7 @@ public class CheckoutRoundFragment extends Fragment {
             }
 
         } catch (SQLiteException ex) {
-            Toast.makeText(getActivity().getApplicationContext(), "Database error occurred 2", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
     }
 
@@ -245,16 +245,16 @@ public class CheckoutRoundFragment extends Fragment {
             }
 
         } catch (SQLiteException e) {
-
+            e.printStackTrace();
         }
     }
 
     public Dialog bookFlightDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Your flight booked successfully. ")
+        builder.setMessage(R.string.book_successfully_label)
                 .setCancelable(false)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button_label, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
                         intent = new Intent(getActivity(), MainActivity.class);
@@ -269,9 +269,9 @@ public class CheckoutRoundFragment extends Fragment {
     public Dialog roundFlightAlreadyBookedAlert() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("You already booked either the outbound or the return flight. Please select another flight and try again. ")
+        builder.setMessage(R.string.already_round_flight)
                 .setCancelable(false)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button_label, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
                         intent = new Intent(getActivity(), MainActivity.class);

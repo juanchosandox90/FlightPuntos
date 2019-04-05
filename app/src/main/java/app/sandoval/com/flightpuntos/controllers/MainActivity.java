@@ -121,12 +121,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         TabHost.TabSpec spec = tabHost.newTabSpec("Tab One");
         spec.setContent(R.id.tab1);
-        spec.setIndicator("One way");
+        spec.setIndicator(getString(R.string.one_way_tab_label));
         tabHost.addTab(spec);
 
         spec = tabHost.newTabSpec("Tab Two");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("Round Trip");
+        spec.setIndicator(getString(R.string.round_trip_tab_label));
         tabHost.addTab(spec);
 
         for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
@@ -314,10 +314,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public Dialog oneWayClassPickerDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        final CharSequence[] classList = {"Economy", "Business"}; //temp data, should be retrieved from database
+        final CharSequence[] classList = {getString(R.string.economy_label), getString(R.string.business_label)}; //temp data, should be retrieved from database
 
 
-        builder.setTitle("Select Class")
+        builder.setTitle(R.string.select_class_label)
                 .setSingleChoiceItems(classList, tempOneWaySelectedClassID, new DialogInterface
                         .OnClickListener() {
                     @Override
@@ -326,11 +326,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         btnOneWayClass.setText(classList[id].toString());
                     }
                 })
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
 
@@ -345,9 +345,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public Dialog roundClassPickerDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        final CharSequence[] classList = {"Economy", "Business"};
+        final CharSequence[] classList = {getString(R.string.economy_label), getString(R.string.business_label)};
 
-        builder.setTitle("Select Class")
+        builder.setTitle(R.string.select_class_label)
                 .setSingleChoiceItems(classList, tempRoundSelectedClassID, new DialogInterface
                         .OnClickListener() {
                     @Override
@@ -357,11 +357,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         btnRoundClass.setText(classList[id].toString());
                     }
                 })
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
 
@@ -373,19 +373,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return builder.create();
     }
+
     public Dialog oneWayNumTravellerDialog() {
 
 
         dialogLayout = getLayoutInflater().inflate(R.layout.custom_dialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("Number of travellers")
+        builder.setTitle(R.string.number_of_travellers_label)
                 .setView(dialogLayout)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
 
@@ -401,7 +402,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View view) {
                 oneWayTravellerCount++;
                 numTraveller.setText(String.valueOf(oneWayTravellerCount));
-                btnOneWayNumTraveller.setText(String.valueOf(oneWayTravellerCount) + " Traveller");
+                btnOneWayNumTraveller.setText(String.valueOf(oneWayTravellerCount) + " " + R.string.traveller_count_label);
             }
         });
 
@@ -412,7 +413,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     oneWayTravellerCount--;
                 }
                 numTraveller.setText(String.valueOf(oneWayTravellerCount));
-                btnOneWayNumTraveller.setText(String.valueOf(oneWayTravellerCount) + " Traveller");
+                btnOneWayNumTraveller.setText(String.valueOf(oneWayTravellerCount) + " " + R.string.traveller_count_label);
             }
         });
 
@@ -427,13 +428,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dialogLayout = getLayoutInflater().inflate(R.layout.custom_dialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("Number of travellers")
+        builder.setTitle(R.string.number_of_travellers_label)
                 .setView(dialogLayout)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.cancel_dialog, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
 
@@ -449,7 +450,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View view) {
                 roundTravellerCount++;
                 numTraveller.setText(String.valueOf(roundTravellerCount));
-                btnRoundNumTraveller.setText(String.valueOf(roundTravellerCount) + " Traveller");
+                btnRoundNumTraveller.setText(String.valueOf(roundTravellerCount) + " " + R.string.traveller_count_label);
             }
         });
 
@@ -460,7 +461,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     roundTravellerCount--;
                 }
                 numTraveller.setText(String.valueOf(roundTravellerCount));
-                btnRoundNumTraveller.setText(String.valueOf(roundTravellerCount) + " Traveller");
+                btnRoundNumTraveller.setText(String.valueOf(roundTravellerCount) + " " + R.string.traveller_count_label);
             }
         });
 
@@ -548,9 +549,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public Dialog datePickerAlert() {
         return new AlertDialog.Builder(this)
-                .setMessage("Please select a valid return date. The return date cannot be before the departure date.")
+                .setMessage(R.string.select_valid_return_date)
                 .setCancelable(false)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button_label, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
                 }).create();
@@ -558,9 +559,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public Dialog datePickerOneAlert() {
         return new AlertDialog.Builder(this)
-                .setMessage("Please select a departure date.")
+                .setMessage(R.string.select_departure_date)
                 .setCancelable(false)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button_label, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
                 }).create();
@@ -568,9 +569,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public Dialog datePickerTwoAlert() {
         return new AlertDialog.Builder(this)
-                .setMessage("Please select a return date.")
+                .setMessage(R.string.select_return_date)
                 .setCancelable(false)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.ok_button_label, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
                 }).create();
@@ -591,7 +592,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         editor.putString("ORIGIN", HelperUtilities.filter(txtOneWayFrom.getText().toString().trim()));
         editor.putString("DESTINATION", HelperUtilities.filter(txtOneWayTo.getText().toString().trim()));
         editor.putString("DEPARTURE_DATE", oneWayDepartureDate);
-        editor.putString("FLIGHT_CLASS", btnOneWayClass.getText().toString());
+        if (btnOneWayClass.getText().toString().equals("Economica")) {
+            editor.putString("FLIGHT_CLASS", btnOneWayClass.getText().toString().replace("Economica", "Economy"));
+        } else if (btnOneWayClass.getText().toString().equals("Ejecutiva")) {
+            editor.putString("FLIGHT_CLASS", btnOneWayClass.getText().toString().replace("Ejecutiva", "Bussiness"));
+        }
         editor.putInt("ONEWAY_NUM_TRAVELLER", oneWayTravellerCount);
 
         editor.commit();
@@ -613,7 +618,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         editor.putString("DESTINATION", HelperUtilities.filter(txtRoundTo.getText().toString().trim()));
         editor.putString("DEPARTURE_DATE", roundDepartureDate);
         editor.putString("RETURN_DATE", roundReturnDate);
-        editor.putString("FLIGHT_CLASS", btnOneWayClass.getText().toString().replace("Economica", "Economy"));
+        if (btnOneWayClass.getText().toString().equals("Economica")) {
+            editor.putString("FLIGHT_CLASS", btnOneWayClass.getText().toString().replace("Economica", "Economy"));
+        } else if (btnOneWayClass.getText().toString().equals("Ejecutiva")) {
+            editor.putString("FLIGHT_CLASS", btnOneWayClass.getText().toString().replace("Ejecutiva", "Bussiness"));
+        }
         editor.putInt("ROUND_NUM_TRAVELLER", roundTravellerCount);
 
 
@@ -650,9 +659,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         } catch (SQLiteException ex) {
-            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
     }
+
     public void loadImage(int clientID) {
         try {
             databaseHelper = new DatabaseHelper(getApplicationContext());
@@ -673,7 +683,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
         } catch (SQLiteException ex) {
-            Toast.makeText(getApplicationContext(), "Database unavailable", Toast.LENGTH_SHORT).show();
+            ex.printStackTrace();
         }
 
     }
@@ -686,18 +696,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public boolean isValidOneWayInput() {
         if (HelperUtilities.isEmptyOrNull(txtOneWayFrom.getText().toString())) {
-            txtOneWayFrom.setError("Please enter the origin");
+            txtOneWayFrom.setError(getString(R.string.enter_origin));
             return false;
         } else if (!HelperUtilities.isString(txtOneWayFrom.getText().toString())) {
-            txtOneWayFrom.setError("Please enter a valid origin");
+            txtOneWayFrom.setError(getString(R.string.enter_valid_origin));
             return false;
         }
 
         if (HelperUtilities.isEmptyOrNull(txtOneWayTo.getText().toString())) {
-            txtOneWayTo.setError("Please enter the destination");
+            txtOneWayTo.setError(getString(R.string.enter_destination));
             return false;
         } else if (!HelperUtilities.isString(txtOneWayTo.getText().toString())) {
-            txtOneWayTo.setError("Please enter a valid destination");
+            txtOneWayTo.setError(getString(R.string.enter_valid_destination));
             return false;
         }
 
@@ -711,27 +721,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public boolean isValidRoundInput() {
         if (HelperUtilities.isEmptyOrNull(txtRoundFrom.getText().toString())) {
-            txtRoundFrom.setError("Please enter the origin");
+            txtRoundFrom.setError(getString(R.string.enter_origin));
             return false;
         } else if (!HelperUtilities.isString(txtRoundFrom.getText().toString())) {
-            txtRoundFrom.setError("Please enter a valid origin");
+            txtRoundFrom.setError(getString(R.string.enter_valid_origin));
             return false;
         }
 
         if (HelperUtilities.isEmptyOrNull(txtRoundTo.getText().toString())) {
-            txtRoundTo.setError("Please enter the destination");
+            txtRoundTo.setError(getString(R.string.enter_destination));
             return false;
         } else if (!HelperUtilities.isString(txtRoundTo.getText().toString())) {
-            txtRoundTo.setError("Please enter a valid destination");
+            txtRoundTo.setError(getString(R.string.enter_valid_destination));
             return false;
         }
 
-        if (btnRoundDepartureDatePicker.getText().toString().equalsIgnoreCase("departure date")) {
+        if (btnRoundDepartureDatePicker.getText().toString().equalsIgnoreCase(getString(R.string.prompt_departure_date))) {
             datePickerOneAlert().show();
             return false;
         }
 
-        if (btnRoundReturnDatePicker.getText().toString().equalsIgnoreCase("return date")) {
+        if (btnRoundReturnDatePicker.getText().toString().equalsIgnoreCase(getString(R.string.prompt_return_date))) {
             datePickerTwoAlert().show();
             return false;
         }
